@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="forms">    
+    <h1>Заполните форму</h1>
+
+    <form action="" class="form" id="add_form">
+
+        <div class="inp_box">
+            <label>Surname</label>
+            <div class="inner_inp_box">
+                <input type="text" data-name="true" class="input_field" placeholder="Surname">
+            </div>
+        </div>
+
+        <div class="inp_box">
+            <label>Name</label>
+            <div class="inner_inp_box">
+                <input type="text" data-name="true"class="input_field" placeholder="Name">
+            </div>
+        </div>
+
+        <div class="inp_box">
+            <label>email <i>mailname@mail.ts</i></label>
+            <div class="inner_inp_box">
+                <input type="text" data-email="true" class="input_field" placeholder="text@test.ts">
+            </div>
+        </div>
+
+        <div class="inp_box">
+            <label>Number <i>+375(xx)xxx-xx-xx</i></label>
+            <div class="inner_inp_box">
+                <input type="tel" data-phone="true" class="input_field" placeholder="+375(__)___-__-__" maxlength="19">
+            </div>
+        </div>
+
+        <div class="inp_box">
+            <label>Sity</label>
+            <div class="inner_inp_box">
+                <select id="city">
+                    <option>Выберите город</option>
+                    <option value="Minsk">Минск</option>
+                    <option value="Brest">Брест</option>
+                    <option value="Grodno">Гродно</option>
+                    <option value="Gomel">Гомель</option>
+                    <option value="Mogulev">Могилев</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="inp_box">
+            <label>Я учусь в БГТУ</label>
+            <div class="inner_inp_box">
+                <input type="checkbox" name="" id="imBstu">
+            </div>
+        </div>
+
+        <div class="inp_box">
+            <label>Какой курс</label>
+            <div>
+                <input type="radio" data-radio="false" name="course" class="radio" id="">
+                <label>1</label>
+                <input type="radio" data-radio="false" name="course" class="radio" id="">
+                <label>2</label>
+                <input type="radio" data-radio="true" name="course" class="radio" id="radio3">
+                <label>3</label>
+                <input type="radio" data-radio="false" name="course" class="radio" id="">
+                <label>4</label>
+            </div>
+        </div>
+        
+        <div class="inp_box">
+            <label>Расскажите о себе</label>
+            <div class="inner_inp_box">
+                <textarea data-textarea="true" id="textarea" cols="35" rows="8" ></textarea>
+            </div>
+        </div>
+
+        <button type="submit" class="send_btn">Отправить</button>
+    </form>
+
+</div>
+
+<script src="main.js"></script>
+
+</body>
+</html>

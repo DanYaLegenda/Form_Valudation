@@ -1,51 +1,6 @@
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    let phone_numbers = document.querySelectorAll('input[data-phone]');
-
-    let getInputValue = function(input) {
-        return input.value.replace(/\D/g, "");
-    }
-
-    let onPhoneInput = function(event) {
-        let input = event.target;
-        let input_value = getInputValue(input);
-        let formated_input_value = "";
-
-        if (!input_value) {
-            return input.value = "";
-        }
-        formated_input_value = "+375";
-
-        if (input_value.length > 1) {
-            formated_input_value += "(" + input_value.substring(3, 5);
-        }   
-        if (input_value.length >= 6) {
-            formated_input_value += ")" + input_value.substring(5,8);
-        }
-        if (input_value.length >= 9) {
-            formated_input_value += "-" + input_value.substring(8, 10);
-        }
-        if (input_value.length >= 11) {
-            formated_input_value += "-" + input_value.substring(10, 12)
-        }
-        input.value = formated_input_value;
-        console.log(input_value)
-    }
-
-    for (let i = 0; i < phone_numbers.length; i++) {
-        let input = phone_numbers[i];
-        input.addEventListener("input", onPhoneInput);
-    }
-})
-
-
-
-
-
-
-
-
+document.addEventListener("DOMContentLoaded", name.maskPhone());
 
 
 
@@ -148,24 +103,6 @@ function validation(form) {
             }
         }
     })
-    if (result) {
-        let check = document.getElementById("imBstu");
-        let city = document.getElementById("city");
-        let radio = document.getElementById("radio3")
-        if (!(check.checked && city.value == "Minsk" && radio.checked))
-        {
-            if (!confirm("Вы уверены в своём выборе?"))
-            {
-                input.preventDefault();
-                result = true;
-            }   
-            else {
-                result = false;
-            }
-        }
-    }
-    
-    
 
     return result;
 }
@@ -173,7 +110,7 @@ function validation(form) {
 
 document.getElementById('add_form').addEventListener('submit', function(event) {
     event.preventDefault();
-    
+
     if (validation(this)) {
         alert('Форма прошла проверку!');
     } else {
@@ -181,3 +118,48 @@ document.getElementById('add_form').addEventListener('submit', function(event) {
     }
 
 })
+
+
+
+
+
+
+function maskPhone() {
+
+    let phone_numbers = document.querySelectorAll('input[data-phone]');
+
+    let getInputValue = function(input) {
+        return input.value.replace(/\D/g, "");
+    }
+
+    let onPhoneInput = function(event) {
+        let input = event.target;
+        let input_value = getInputValue(input);
+        let formated_input_value = "";
+
+        if (!input_value) {
+            return input.value = "";
+        }
+        formated_input_value = "+375";
+
+        if (input_value.length > 1) {
+            formated_input_value += "(" + input_value.substring(3, 5);
+        }   
+        if (input_value.length >= 6) {
+            formated_input_value += ")" + input_value.substring(5,8);
+        }
+        if (input_value.length >= 9) {
+            formated_input_value += "-" + input_value.substring(8, 10);
+        }
+        if (input_value.length >= 11) {
+            formated_input_value += "-" + input_value.substring(10, 12)
+        }
+        input.value = formated_input_value;
+        console.log(input_value)
+    }
+
+    for (let i = 0; i < phone_numbers.length; i++) {
+        let input = phone_numbers[i];
+        input.addEventListener("input", onPhoneInput);
+    }
+}

@@ -1,6 +1,6 @@
 
 
-document.addEventListener("DOMContentLoaded", name.maskPhone());
+document.addEventListener("DOMContentLoaded", maskPhone());
 
 
 
